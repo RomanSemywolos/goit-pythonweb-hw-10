@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy
+asyncpg
+cloudinary
+python-jose
+passlib
+email-validator
+python-dotenv
+slowapi
+pydantic-settings
+python-multipart
