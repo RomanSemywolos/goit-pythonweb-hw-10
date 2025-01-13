@@ -1,12 +1,23 @@
+# FastAPI і сервер
 fastapi
 uvicorn
+
+# База даних і ORM
 sqlalchemy
+alembic
 asyncpg
-cloudinary
-python-jose
-passlib
-email-validator
-python-dotenv
-slowapi
-pydantic-settings
+
+# Безпека
+python-jose[cryptography]
+passlib[bcrypt]
+
+# Робота з файлами і конфігурацією
 python-multipart
+python-dotenv
+
+# Валідація
+email-validator
+pydantic[email]
+
+# Хмарне сховище
+cloudinary

@@ -3,25 +3,29 @@ services:
     build: .
     ports:
       - "8000:8000"
-    volumes:
-      - .:/app
     env_file:
       - .env
     depends_on:
       - db
+    networks:
+      - app_network
+    environment:
+      - PYTHONPATH=/app/src
 
   db:
-    image: postgres:14
-    container_name: postgres
-    restart: always
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
-    ports:
-      - "5432:5432"
+    image: postgres:13
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: contacts_db
+      POSTGRES_PASSWORD: 2315
+    ports:
+      - "5432:5432"
+    networks:
+      - app_network
 
 volumes:
   postgres_data:
+
+networks:
+  app_network:
